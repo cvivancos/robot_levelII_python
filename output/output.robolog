@@ -1,0 +1,354 @@
+V 0.0.4
+T 2023-11-02T11:44:39.989+00:00
+ID 1|34d9db4e-7975-11ee-9cb2-74e5f9daaafb
+I "sys.platform=win32"
+I "python=3.10.12 | packaged by conda-forge | (main, Jun 23 2023, 22:34:57) [MSC v.1936 64 bit (AMD64)]"
+M a:"tasks.py"
+SR a|0.016
+M c:"Collect tasks"
+M d:"setup"
+M e:""
+P b:c|d|e|e|0
+ST b|0.016
+M f:"regular"
+M g:"\nCollecting tasks from: tasks.py\n"
+C f|g|0.016
+M h:"stderr"
+M i:"2023-11-02 12:44:57,654 - RPA.core.certificates - INFO - Truststore injection done, using system certificate store to validate HTTPS.\n"
+C h|i|17.665
+M j:"PASS"
+ET j|e|44.68
+M l:"order_robots_from_RobotSpareBin"
+M m:"Users.Carmen Vivancos.Desktop.ROBOCORP.robot_nivel2_python.tasks"
+M n:"C:\\Users\\Carmen Vivancos\\Desktop\\ROBOCORP\\robot_nivel2_python\\tasks.py"
+M o:"\n    Orders robots from RobotSpareBin Industries Inc.\n    Saves the order HTML receipt as a PDF file.\n    Saves the screenshot of the ordered robot.\n    Embeds the screenshot of the robot to the PDF receipt.\n    Creates ZIP archive of the receipts and the images.\n    "
+P k:l|m|n|o|19
+ST k|44.68
+M p:"=================== "
+C f|p|44.685
+M q:"Running: "
+C f|q|44.685
+M r:"task_name"
+C r|l|44.685
+M s:" ===================\n"
+C f|s|44.685
+M t:"METHOD"
+SE k|t|44.685
+M v:"configure"
+M w:"robocorp.browser"
+M x:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\robocorp\\browser\\__init__.py"
+P u:v|w|x|e|18
+SE u|t|44.685
+M y:"kwargs"
+M z:"dict"
+M A:"{'slowmo': 100}"
+EA y|z|A
+EE t|j|44.715
+M C:"open_robot_order_website"
+P B:C|m|n|e|40
+SE B|t|44.715
+M E:"goto"
+P D:E|w|x|e|185
+SE D|t|44.715
+M F:"url"
+M G:"str"
+M H:"'https://robotsparebinindustries.com/#/robot-order'"
+EA F|G|H
+P I:E|w|x|e|198
+M J:"Page"
+M K:"<Page url='https://robotsparebinindustries.com/#/robot-order'>"
+R I|J|K|48.495
+EE t|j|48.495
+EE t|j|48.495
+M M:"get_orders"
+P L:M|m|n|e|51
+SE L|t|48.495
+M O:"HTTP.__init__"
+M P:"RPA.HTTP"
+M Q:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\RPA\\HTTP.py"
+P N:O|P|Q|e|91
+SE N|t|48.496
+M R:"args"
+M S:"tuple"
+M T:"()"
+EA R|S|T
+M U:"{}"
+EA y|z|U
+EE t|j|48.498
+M W:"HTTP.download"
+P V:W|P|Q|e|188
+SE V|t|48.499
+M X:"'https://robotsparebinindustries.com/orders.csv'"
+EA F|G|X
+M Y:"target_file"
+M Z:"WindowsPath"
+M 0:"WindowsPath('output/orders.csv')"
+EA Y|Z|0
+M 1:"verify"
+M 2:"bool"
+M 3:"True"
+EA 1|2|3
+M 4:"force_new_session"
+M 5:"False"
+EA 4|2|5
+M 6:"overwrite"
+EA 6|2|3
+M 7:"stream"
+EA 7|2|5
+EA y|z|U
+P 8:W|P|Q|e|260
+M 9:"Response"
+M aa:"<Response [200]>"
+R 8|9|aa|49.148
+EE t|j|49.148
+M ac:"HTTPResponse.closed"
+M ad:"urllib3.response"
+M ae:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\urllib3\\response.py"
+P ab:ac|ad|ae|e|956
+SE ab|t|49.148
+P af:ac|ad|ae|e|962
+R af|2|3|49.149
+EE t|j|49.15
+M ah:"Tables.__init__"
+M ai:"RPA.Tables"
+M aj:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\RPA\\Tables.py"
+P ag:ah|ai|aj|e|989
+SE ag|t|49.152
+EE t|j|49.153
+M al:"Tables.read_table_from_csv"
+P ak:al|ai|aj|e|1856
+SE ak|t|49.153
+M am:"path"
+EA am|Z|0
+M an:"header"
+EA an|2|3
+M ao:"columns"
+M ap:"NoneType"
+M aq:"None"
+EA ao|ap|aq
+M ar:"dialect"
+EA ar|ap|aq
+M as:"delimiters"
+EA as|ap|aq
+M at:"column_unknown"
+M au:"'Unknown'"
+EA at|G|au
+M av:"encoding"
+EA av|ap|aq
+P aw:al|ai|aj|e|1940
+M ax:"Table"
+M ay:"Table(columns=['Order number', 'Head', 'Body', 'Legs', 'Address'], rows=20)"
+R aw|ax|ay|49.165
+EE t|j|49.165
+P az:M|m|n|e|56
+M aA:"table"
+AS az|aA|ax|ay|49.165
+P aB:M|m|n|e|59
+R aB|ax|ay|49.166
+EE t|j|49.166
+P aC:l|m|n|e|32
+M aD:"orders"
+AS aC|aD|ax|ay|49.166
+M aF:"for row in orders"
+P aE:aF|m|n|e|33
+M aG:"FOR"
+SE aE|aG|54.248
+M aI:"Table.iter_dicts"
+P aH:aI|ai|aj|e|827
+M aJ:"UNTRACKED_GENERATOR"
+SE aH|aJ|54.249
+M aK:"with_index"
+EA aK|2|5
+M aM:"Step: for row in orders"
+P aL:aM|m|n|e|33
+M aN:"FOR_STEP"
+SE aL|aN|54.253
+M aO:"row"
+M aP:"{'Order number': '1', 'Head': '1', 'Body': '2', 'Legs': '3', 'Address': 'Address 123'}"
+EA aO|z|aP
+M aR:"close_the_annoying_modal"
+P aQ:aR|m|n|e|45
+SE aQ|t|54.638
+M aT:"page"
+P aS:aT|w|x|e|95
+SE aS|t|54.639
+P aU:aT|w|x|e|114
+R aU|J|K|54.641
+EE t|j|54.641
+P aV:aR|m|n|e|46
+AS aV|aT|J|K|54.642
+M aX:"Page.click"
+M aY:"playwright.sync_api._generated"
+M aZ:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\playwright\\sync_api\\_generated.py"
+P aW:aX|aY|aZ|e|10106
+SE aW|t|55.353
+M a0:"selector"
+M a1:"\"button:text('OK')\""
+EA a0|G|a1
+P a2:aX|aY|aZ|e|10170
+R a2|ap|aq|55.62
+EE t|j|55.62
+EE t|j|55.652
+M a4:"fill_the_form"
+P a3:a4|m|n|e|62
+SE a3|t|57.526
+M a5:"myrow"
+EA a5|z|aP
+SE aS|t|57.526
+R aU|J|K|57.526
+EE t|j|57.526
+P a6:a4|m|n|e|63
+AS a6|aT|J|K|57.531
+M a8:"Page.select_option"
+P a7:a8|aY|aZ|e|11328
+SE a7|t|58.145
+M a9:"'#head'"
+EA a0|G|a9
+M ba:"value"
+M bb:"'1'"
+EA ba|G|bb
+P bc:a8|aY|aZ|e|11410
+M bd:"list"
+M be:"['1']"
+R bc|bd|be|58.285
+EE t|j|58.285
+M bg:"Page.check"
+P bf:bg|aY|aZ|e|11667
+SE bf|t|58.948
+M bh:"'#id-body-2'"
+EA a0|G|bh
+P bi:bg|aY|aZ|e|11719
+R bi|ap|aq|59.121
+EE t|j|59.121
+M bk:"Page.type"
+P bj:bk|aY|aZ|e|11521
+SE bj|t|66.449
+M bl:"'#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input'"
+EA a0|G|bl
+M bm:"text"
+M bn:"'3'"
+EA bm|G|bn
+M bo:"Error: Unexpected token \"#\" while parsing selector \"#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input\""
+STB bo|66.58
+M bp:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\robocorp\\tasks\\_task.py"
+M bq:"run"
+M br:"self.method()"
+TBE bp|30|bq|br
+M bs:"self"
+M bt:"Task"
+M bu:"Task(order_robots_from_RobotSpareBin, status: NOT_RUN)"
+TBV bs|bt|bu
+M bv:"fill_the_form(row)"
+TBE n|35|l|bv
+TBV aD|ax|ay
+TBV aO|z|aP
+M bw:"page.type(\"#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input\", myrow[\"Legs\"])"
+TBE n|67|a4|bw
+TBV a5|z|aP
+TBV aT|J|K
+M bx:"type"
+M by:"self._sync("
+TBE aZ|11562|bx|by
+TBV bs|J|K
+TBV a0|G|bl
+TBV bm|G|bn
+M bz:"delay"
+TBV bz|ap|aq
+M bA:"timeout"
+TBV bA|ap|aq
+M bB:"no_wait_after"
+TBV bB|ap|aq
+M bC:"strict"
+TBV bC|ap|aq
+M bD:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\playwright\\_impl\\_sync_base.py"
+M bE:"_sync"
+M bF:"return task.result()"
+TBE bD|109|bE|bF
+TBV bs|J|K
+M bG:"coro"
+M bH:"coroutine"
+M bI:"<coroutine object Page.type at 0x0000024290044660>"
+TBV bG|bH|bI
+M bJ:"__tracebackhide__"
+TBV bJ|2|3
+M bK:"task"
+M bL:"<Task finished name='Task-11' coro=<Page.type() done, defined at c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\playwright\\_impl\\_page.py:888> exception=Error('Unexpected token \"#\" while parsing selector \"#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input\"')>"
+TBV bK|bt|bL
+M bM:"g_self"
+M bN:"greenlet"
+M bO:"<greenlet.greenlet object at 0x000002428DF88A80 (otid=0x000002428C50B450) current active started main>"
+TBV bM|bN|bO
+M bP:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\playwright\\_impl\\_page.py"
+M bQ:"return await self._main_frame.type(**locals_to_params(locals()))"
+TBE bP|897|bx|bQ
+TBV bs|J|K
+TBV a0|G|bl
+TBV bm|G|bn
+TBV bz|ap|aq
+TBV bA|ap|aq
+M bR:"noWaitAfter"
+TBV bR|ap|aq
+TBV bC|ap|aq
+M bS:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\playwright\\_impl\\_frame.py"
+M bT:"await self._channel.send(\"type\", locals_to_params(locals()))"
+TBE bS|713|bx|bT
+M bU:"Frame"
+M bV:"<Frame name= url='https://robotsparebinindustries.com/#/robot-order'>"
+TBV bs|bU|bV
+TBV a0|G|bl
+TBV bm|G|bn
+TBV bz|ap|aq
+TBV bC|ap|aq
+TBV bA|ap|aq
+TBV bR|ap|aq
+M bW:"c:\\ProgramData\\robocorp\\ht\\50befda_b1f3c24_6cd60f16\\lib\\site-packages\\playwright\\_impl\\_connection.py"
+M bX:"send"
+M bY:"return await self._connection.wrap_api_call("
+TBE bW|61|bX|bY
+M bZ:"method"
+M b0:"'type'"
+TBV bZ|G|b0
+M b1:"params"
+M b2:"{'selector': '#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input', 'text': '3'}"
+TBV b1|z|b2
+M b3:"Channel"
+M b4:"<playwright._impl._connection.Channel object at 0x000002428E3BD900>"
+TBV bs|b3|b4
+M b5:"wrap_api_call"
+M b6:"return await cb()"
+TBE bW|490|b5|b6
+M b7:"Connection"
+M b8:"<playwright._impl._connection.Connection object at 0x000002428C509540>"
+TBV bs|b7|b8
+M b9:"cb"
+M ca:"function"
+M cc:"<function Channel.send.<locals>.<lambda> at 0x0000024290048D30>"
+TBV b9|ca|cc
+M cd:"is_internal"
+TBV cd|2|5
+TBV bK|bt|bL
+M ce:"st"
+M cf:"[FrameInfo(frame=<frame at 0x00000242900859A0, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\playwright\\\\_impl\\\\_sync_base.py', line 109, code _sync>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\playwright\\\\_impl\\\\_sync_base.py', lineno=102, function='_sync', code_context=['        setattr(task, \"__pw_stack__\", inspect.stack())\\n'], index=0), FrameInfo(frame=<frame at 0x000002428A1CADF0, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\playwright\\\\sync_api\\\\_generated.py', line 11561, code type>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\playwright\\\\sync_api\\\\_generated.py', lineno=11562, function='type', code_context=['            self._sync(\\n'], index=0), FrameInfo(frame=<frame at 0x0000024290069590, file 'C:\\\\Users\\\\Carmen Vivancos\\\\Desktop\\\\ROBOCORP\\\\robot_nivel2_python\\\\tasks.py', line 67, code fill_the_form>, filename='C:\\\\Users\\\\Carmen Vivancos\\\\Desktop\\\\ROBOCORP\\\\robot_nivel2_python\\\\tasks.py', lineno=67, function='fill_the_form', code_context=['    page.type(\"#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input\", myrow[\"Legs\"])\\n'], index=0), FrameInfo(frame=<frame at 0x0000024291526130, file 'C:\\\\Users\\\\Carmen Vivancos\\\\Desktop\\\\ROBOCORP\\\\robot_nivel2_python\\\\tasks.py', line 35, code order_robots_from_RobotSpareBin>, filename='C:\\\\Users\\\\Carmen Vivancos\\\\Desktop\\\\ROBOCORP\\\\robot_nivel2_python\\\\tasks.py', lineno=35, function='order_robots_from_RobotSpareBin', code_context=['        fill_the_form(row)\\n'], index=0), FrameInfo(frame=<frame at 0x000002429124F440, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_task.py', line 30, code run>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_task.py', lineno=30, function='run', code_context=['        self.method()\\n'], index=0), FrameInfo(frame=<frame at 0x000002428700B7B0, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_commands.py', line 243, code run>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_commands.py', lineno=243, function='run', code_context=['                        task.run()\\n'], index=0), FrameInfo(frame=<frame at 0x000002428677CC10, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_argdispatch.py', line 20, code _dispatch>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_argdispatch.py', lineno=20, function='_dispatch', code_context=['        return method(**dct)\\n'], index=0), FrameInfo(frame=<frame at 0x000002428933EE40, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_argdispatch.py', line 145, code process_args>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\_argdispatch.py', lineno=145, function='process_args', code_context=['        return self._dispatch(parsed)\\n'], index=0), FrameInfo(frame=<frame at 0x00000242892E9A80, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\cli.py', line 23, code main>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\cli.py', lineno=23, function='main', code_context=['    returncode = _arg_dispatch.process_args(args)\\n'], index=0), FrameInfo(frame=<frame at 0x0000024288FE9E40, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\__main__.py', line 4, code <module>>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\site-packages\\\\robocorp\\\\tasks\\\\__main__.py', lineno=4, function='<module>', code_context=['    main()\\n'], index=0), FrameInfo(frame=<frame at 0x00000242862F2800, file 'c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy\\\\_vendored\\\\pydevd\\\\_pydevd_bundle\\\\pydevd_runpy.py', line 124, code _run_code>, filename='c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy\\\\_vendored\\\\pydevd\\\\_pydevd_bundle\\\\pydevd_runpy.py', lineno=124, function='_run_code', code_context=['    exec(code, run_globals)\\n'], index=0), FrameInfo(frame=<frame at 0x000002428933EA40, file 'c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy\\\\_vendored\\\\pydevd\\\\_pydevd_bundle\\\\pydevd_runpy.py', line 238, code _run_module_as_main>, filename='c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy\\\\_vendored\\\\pydevd\\\\_pydevd_bundle\\\\pydevd_runpy.py', lineno=238, function='_run_module_as_main', code_context=['    return _run_code(code, main_globals, None,\\n'], index=0), FrameInfo(frame=<frame at 0x000002428934C210, file 'c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy/..\\\\debugpy\\\\server\\\\cli.py', line 317, code run_module>, filename='c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy/..\\\\debugpy\\\\server\\\\cli.py', lineno=317, function='run_module', code_context=['        run_module_as_main(options.target, alter_argv=True)\\n'], index=0), FrameInfo(frame=<frame at 0x0000024286A17020, file 'c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy/..\\\\debugpy\\\\server\\\\cli.py', line 430, code main>, filename='c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy/..\\\\debugpy\\\\server\\\\cli.py', lineno=430, function='main', code_context=['        run()\\n'], index=0), FrameInfo(frame=<frame at 0x0000024285E7F300, file 'c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy\\\\__main__.py', line 39, code <module>>, filename='c:\\\\Users\\\\Carmen Vivancos\\\\.vscode\\\\extensions\\\\ms-python.python-2023.21.13051019\\\\pythonFiles\\\\lib\\\\python\\\\debugpy\\\\__main__.py', lineno=39, function='<module>', code_context=['    cli.main()\\n'], index=0), FrameInfo(frame=<frame at 0x0000024286236490, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\runpy.py', line 86, code _run_code>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\runpy.py', lineno=86, function='_run_code', code_context=['    exec(code, run_globals)\\n'], index=0), FrameInfo(frame=<frame at 0x0000024285E0A040, file 'c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\runpy.py', line 196, code _run_module_as_main>, filename='c:\\\\ProgramData\\\\robocorp\\\\ht\\\\50befda_b1f3c24_6cd60f16\\\\lib\\\\runpy.py', lineno=196, function='_run_module_as_main', code_context=['    return _run_code(code, main_globals, None,\\n'], index=0)]"
+TBV ce|bd|cf
+M cg:"inner_send"
+M ch:"result = next(iter(done)).result()"
+TBE bW|99|cg|ch
+TBV bs|b3|b4
+TBV bZ|G|b0
+TBV b1|z|b2
+M ci:"return_as_dict"
+TBV ci|2|5
+M cj:"callback"
+M ck:"ProtocolCallback"
+M cl:"<playwright._impl._connection.ProtocolCallback object at 0x000002428654C100>"
+TBV cj|ck|cl
+M cm:"done"
+M cn:"set"
+M co:"{<Future finished exception=Error('Unexpected token \"#\" while parsing selector \"#/html/body/div/div/div[1]/div/div[1]/form/div[3]/input\"')>}"
+TBV cm|cn|co
+M cp:"_"
+M cq:"{<Future pending>}"
+TBV cp|cn|cq
+ETB 66.586
+M cr:"ERROR"
+EE t|cr|66.595
